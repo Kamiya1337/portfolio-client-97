@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fcf9f3;
+            color: #1c1c18;
+            -webkit-font-smoothing: antialiased;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #080807;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #494740;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e6e1e2",
+                      "surface-container-highest": "#e5e2dc",
+                      "border-light": "rgba(37,36,34,0.16)",
+                      "surface-container": "#f0eee8",
+                      "on-tertiary-fixed-variant": "#484647",
+                      "on-error": "#ffffff",
+                      "border-dark": "rgba(243,240,234,0.16)",
+                      "secondary": "#665d4f",
+                      "on-secondary-container": "#6c6354",
+                      "primary-fixed-dim": "#c9c6c2",
+                      "on-surface-variant": "#494740",
+                      "tertiary-container": "#252425",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#4e4638",
+                      "surface-bright": "#fcf9f3",
+                      "inverse-on-surface": "#f3f0ea",
+                      "surface-dim": "#dcdad4",
+                      "tertiary-fixed-dim": "#c9c5c6",
+                      "primary": "#0f0f0d",
+                      "secondary-fixed": "#ede1ce",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "surface-soft": "#CFC4B4",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fcf9f3",
+                      "primary-container": "#252422",
+                      "surface-container-low": "#f6f3ed",
+                      "on-primary-fixed-variant": "#484644",
+                      "text-muted-dark": "#B8B2A8",
+                      "on-primary-fixed": "#1c1b1a",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#100f10",
+                      "inverse-surface": "#31312d",
+                      "secondary-fixed-dim": "#d1c5b3",
+                      "on-tertiary-container": "#8d8b8c",
+                      "primary-fixed": "#e6e2de",
+                      "on-secondary-fixed": "#211b0f",
+                      "on-background": "#1c1c18",
+                      "on-primary-container": "#8e8b88",
+                      "surface-variant": "#e5e2dc",
+                      "secondary-container": "#ede1ce",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#ebe8e2",
+                      "on-surface": "#1c1c18",
+                      "outline": "#7a776f",
+                      "text-muted": "#6F6A62",
+                      "on-tertiary-fixed": "#1c1b1c",
+                      "dark-surface": "#141412",
+                      "outline-variant": "#cac6bd",
+                      "surface": "#fcf9f3",
+                      "surface-tint": "#605e5b",
+                      "deep-black": "#080807",
+                      "inverse-primary": "#c9c6c2",
+                      "error-container": "#ffdad6",
+                      "paper-warm": "#EDE8DF"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "8rem",
+                      "sidebar-width": "300px",
+                      "margin-desktop": "4rem",
+                      "margin-mobile": "1.5rem",
+                      "rule-weight": "1px",
+                      "gutter": "2rem"
+              },
+              "fontFamily": {
+                      "headline-xl-mobile": ["Be Vietnam Pro"],
+                      "body-lg": ["Be Vietnam Pro"],
+                      "display-lg": ["Be Vietnam Pro"],
+                      "headline-md": ["Be Vietnam Pro"],
+                      "body-md": ["Be Vietnam Pro"],
+                      "label-caps": ["Be Vietnam Pro"],
+                      "display-xl": ["Be Vietnam Pro"],
+                      "headline-xl": ["Be Vietnam Pro"]
+              },
+              "fontSize": {
+                      "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen selection:bg-surface-soft selection:text-deep-black">
+<!-- SIDEBAR -->
+<nav class="fixed left-0 top-0 h-screen w-sidebar-width bg-deep-black dark:bg-deep-black border-r border-border-dark flex flex-col h-full py-8 px-6 z-50">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md font-bold text-surface-container-lowest">Portfolio</h1>
+<p class="font-label-caps text-label-caps tracking-widest uppercase text-text-muted-dark mt-1">Academic Year 2025–26</p>
+</div>
+<div class="flex-grow flex flex-col space-y-4">
+<!-- 01 Overview -->
+<a class="flex items-center space-x-4 py-2 group text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">01 Overview</span>
+</a>
+<!-- 02 Assignments -->
+<a class="flex items-center space-x-4 py-2 group text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">02 Assignments</span>
+</a>
+<!-- 03 Evidence (ACTIVE) -->
+<a class="flex items-center space-x-4 py-2 group text-surface-container-lowest font-bold border-l-2 border-surface-container-lowest pl-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">03 Evidence</span>
+</a>
+<!-- 04 Rubric -->
+<a class="flex items-center space-x-4 py-2 group text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4" href="#">
+<span class="material-symbols-outlined text-[20px]">assessment</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">04 Rubric</span>
+</a>
+<!-- 05 Reflection -->
+<a class="flex items-center space-x-4 py-2 group text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4" href="#">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">05 Reflection</span>
+</a>
+</div>
+<div class="mt-auto pt-8 border-t border-border-dark">
+<button class="w-full bg-surface-container-lowest text-deep-black font-label-caps text-label-caps py-4 tracking-widest uppercase hover:bg-tertiary-fixed transition-colors">
+                Contact Faculty
+            </button>
+</div>
+</nav>
+<!-- MAIN CONTENT -->
+<main class="ml-sidebar-width min-h-screen bg-inverse-on-surface">
+<!-- TOP APP BAR -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-20 bg-surface dark:bg-surface border-b border-border-light sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-black text-primary dark:text-primary-fixed-dim uppercase tracking-tighter">
+                    EVIDENCE / MINH CHỨNG
+                </h2>
+</div>
+<div class="hidden md:block">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest">Academic Year 2025–26</span>
+</div>
+</header>
+<!-- CONTENT SECTION -->
+<section class="px-margin-desktop py-12">
+<!-- HEADER INFO -->
+<div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+<div class="col-span-2">
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-4">Submission Repository</p>
+<h3 class="font-headline-xl text-headline-xl text-primary leading-tight">
+                        A curated archive of <br/>Academic Milestones.
+                    </h3>
+</div>
+<div class="text-right pb-2">
+<div class="inline-flex items-center gap-2 border border-border-light px-6 py-3">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_list</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Filter Records</span>
+</div>
+</div>
+</div>
+<!-- PREMIUM EDITORIAL LEDGER (TABLE) -->
+<div class="w-full bg-dark-surface overflow-hidden shadow-2xl">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-dark">
+<th class="px-8 py-6 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Assignment</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Report File</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Evidence Image</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Resource Link</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="text-inverse-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-border-dark hover:bg-tertiary-container transition-colors group">
+<td class="px-8 py-8">
+<div class="font-headline-md text-headline-md text-surface-container-lowest leading-tight">Architecture of <br/>the Industrial Age</div>
+<span class="font-label-caps text-[10px] text-text-muted-dark uppercase tracking-widest">Module 402 • Case Study</span>
+</td>
+<td class="px-8 py-8">
+<a class="flex items-center gap-2 text-surface-container-lowest hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span class="font-body-md text-body-md">arch_case_study_v2.pdf</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<div class="w-32 h-20 bg-primary-container overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Industrial Architecture" class="w-full h-full object-cover" data-alt="A striking high-contrast photograph of a modern glass and steel skyscraper reaching into a clear sky. The image emphasizes sharp architectural lines and rhythmic structural patterns, mirroring the sophisticated and minimalist UI of the portfolio. The lighting is crisp and editorial, highlighting the metallic surfaces in a palette of deep blacks and brilliant whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH3lbJdo6Bxm_s7qqkpoIGNs86pLx9fWHKSj_0Rm4-2J6fXAFtfuNdV7-nmPGQ2vu9VH9mmV5ExDv_7gUlOxPbqUOPW34VnquTZarqZrfGPqCxW2dw6rfG0PeFKJTkNYrFIDDoY-EkIEWHO0BQOlnSIpEC-O9GqDG2fCcYYHqhd_lDKMRe2uOheWYCAeZXmxQjFmZYQlxS4aZjZNkyq6I-6phItiZA-2-yPxJoAZMIp3N4q0UBgS-_Oj7xuVyZKDreo508YeCynFM"/>
+</div>
+</td>
+<td class="px-8 py-8">
+<a class="text-text-muted-dark hover:text-surface-container-lowest flex items-center gap-1 transition-colors" href="#">
+<span class="font-body-md text-body-md">Internal Library</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<span class="px-3 py-1 bg-surface-container-lowest text-deep-black font-label-caps text-[10px] uppercase tracking-widest">Verified</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-border-dark hover:bg-tertiary-container transition-colors group">
+<td class="px-8 py-8">
+<div class="font-headline-md text-headline-md text-surface-container-lowest leading-tight">Typography &amp; <br/>Visual Hierarchy</div>
+<span class="font-label-caps text-[10px] text-text-muted-dark uppercase tracking-widest">Module 301 • Lab Report</span>
+</td>
+<td class="px-8 py-8">
+<a class="flex items-center gap-2 text-surface-container-lowest hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span class="font-body-md text-body-md">typo_system_final.pdf</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<div class="w-32 h-20 bg-primary-container overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Typography Detail" class="w-full h-full object-cover" data-alt="A macro close-up of premium letterpress typography on thick, ivory-toned handmade paper. The ink is a deep, rich charcoal, and the indentations in the paper create subtle shadows that emphasize the tactile quality of the print. The composition is artistic and minimalist, echoing a sense of quiet luxury and high-end editorial craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgfqpYvqtE9mdocHG0toubqxWBDxWByy8zTHaP7k4w_82dcdgV-U7cKIUn7LzgmxlrC5iEdcoSD9WF9W_vLkSk-Av_ciaTNVdVOoHSfpK-FefuCqHblCI3f7MJir7ste_xU5wZPtCsdjeeqdutWJHX5p7tuZ0WQvYhzWl8F5TzWgHf05Qwbq__M18oyo7r-n6te0Wxy5Tozx5JxkHUlt3-fhtuPDez7Bpx3TYp0Rzs4HGjJGHShEky7VaffSGoq2GzApyds6noRJ8"/>
+</div>
+</td>
+<td class="px-8 py-8">
+<a class="text-text-muted-dark hover:text-surface-container-lowest flex items-center gap-1 transition-colors" href="#">
+<span class="font-body-md text-body-md">Behance Case</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<span class="px-3 py-1 bg-text-muted-dark text-deep-black font-label-caps text-[10px] uppercase tracking-widest">Pending</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-border-dark hover:bg-tertiary-container transition-colors group">
+<td class="px-8 py-8">
+<div class="font-headline-md text-headline-md text-surface-container-lowest leading-tight">Sustainable <br/>Material Ecology</div>
+<span class="font-label-caps text-[10px] text-text-muted-dark uppercase tracking-widest">Module 405 • Field Data</span>
+</td>
+<td class="px-8 py-8">
+<a class="flex items-center gap-2 text-surface-container-lowest hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span class="font-body-md text-body-md">ecology_field_notes.pdf</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<div class="w-32 h-20 bg-primary-container overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Material Ecology" class="w-full h-full object-cover" data-alt="A clean, minimalist laboratory setting featuring organic textures like raw stone and recycled glass samples arranged on a matte black surface. The lighting is soft and diffused, creating a serene, scientific atmosphere. The color palette is restricted to warm beiges, soft greys, and deep charcoal, perfectly aligning with the portfolio's architectural and restrained aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo5EELBMGuQMGLSUvaR6ZPTsZ413rIhwhn-4jtyPkg0hYm_cr-GVgW7YnwkaEJA98C0hZEgOpm_mS-7ihZUGVE57zMIxRtfeBAgJXjz3lVtNMSkuCSVaebZ6BxhNvoxEx1B6y-EN3sP5WzcuyoE_UClJik2dXlliuDngyepqZlpF3NHHrAnTPEgTI7IbVEyHXI66CqIC-4bkv3sEIPpW_iYVkyRLwGqRBhhC6wIsAkqXQ0Ux5ep8_9QUK5i_ZY9CSFi-0A47Q2KkA"/>
+</div>
+</td>
+<td class="px-8 py-8">
+<a class="text-text-muted-dark hover:text-surface-container-lowest flex items-center gap-1 transition-colors" href="#">
+<span class="font-body-md text-body-md">Research Portal</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</td>
+<td class="px-8 py-8">
+<span class="px-3 py-1 bg-surface-container-lowest text-deep-black font-label-caps text-[10px] uppercase tracking-widest">Verified</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- LEDGER FOOTER -->
+<div class="px-8 py-6 border-t border-border-dark flex justify-between items-center bg-deep-black">
+<p class="font-label-caps text-[11px] text-text-muted-dark uppercase tracking-widest">Showing 3 of 12 academic records</p>
+<div class="flex gap-4">
+<button class="p-2 border border-border-dark hover:border-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-surface-container-lowest">chevron_left</span>
+</button>
+<button class="p-2 border border-border-dark hover:border-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-surface-container-lowest">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECONDARY ANALYTICS (BENTO STYLE) -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 p-10 bg-paper-warm border border-border-light flex flex-col justify-between min-h-[300px]">
+<div>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-6">Integrity Check</p>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Submission Accuracy</h4>
+<p class="font-body-md text-body-md text-text-muted max-w-sm">All evidence is cross-referenced with institutional databases to ensure the highest standard of academic honesty.</p>
+</div>
+<div class="flex items-end justify-between border-t border-border-light pt-6">
+<span class="font-display-lg text-display-lg leading-none">100%</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-text-muted">Verified Records</span>
+</div>
+</div>
+<div class="p-10 bg-surface-container-low border border-border-light flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-6">File Health</p>
+<span class="material-symbols-outlined text-[48px] text-primary">cloud_done</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">2.4 GB</h4>
+<p class="font-label-caps text-[10px] text-text-muted uppercase tracking-widest mt-1">Stored Assets</p>
+</div>
+</div>
+<div class="p-10 bg-surface border border-border-light flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-6">Last Update</p>
+<span class="material-symbols-outlined text-[48px] text-primary">history</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">14 OCT</h4>
+<p class="font-label-caps text-[10px] text-text-muted uppercase tracking-widest mt-1">Timestamp</p>
+</div>
+</div>
+</div>
+<!-- FOOTER MARGIN -->
+<div class="h-24"></div>
+</section>
+</main>
+<script>
+        // Simple micro-interactions for the ledger rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.add('scale-[0.99]');
+                setTimeout(() => {
+                    row.classList.remove('scale-[0.99]');
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

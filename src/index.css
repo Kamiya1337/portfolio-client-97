@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { min-width: 320px; overflow-x: clip; background: #F3F0EA; }
+  body { margin: 0; min-width: 320px; overflow-x: clip; background: #F3F0EA; color: #252422; font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  ::selection { background: #252422; color: #F3F0EA; }
+}
+
+@layer components {
+  .editorial-label { @apply text-[11px] font-bold uppercase tracking-[0.14em] text-muted-dark; }
+  .dark-editorial-label { @apply text-[10px] font-bold uppercase tracking-[0.14em] text-muted-light; }
+  .page-intro { @apply mx-auto max-w-[1440px] px-6 pb-16 pt-16 sm:px-8 md:pt-24 xl:px-16 xl:pb-20; }
+  .page-title { @apply mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.96] tracking-[-0.06em] text-charcoal; }
+  .page-copy { @apply mt-8 max-w-3xl border-t border-border-light pt-7 text-base leading-8 text-muted-dark; }
+  .button-secondary { @apply inline-flex min-h-10 items-center justify-center gap-2 border border-border-light px-3 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-taupe; }
+  .button-light { @apply inline-flex min-h-12 items-center justify-center gap-2 bg-ivory px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-charcoal transition-colors hover:bg-taupe; }
+  .button-dark-outline { @apply inline-flex min-h-12 items-center justify-center gap-2 border border-border-dark px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-ivory transition-colors hover:bg-dark-surface; }
+  .icon-button-dark { @apply inline-flex h-10 w-10 items-center justify-center border border-border-light text-charcoal transition-colors hover:bg-taupe; }
+  .dark-label-box { @apply inline-flex border border-border-dark px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-muted-light; }
+  .card-resource-link { @apply inline-flex min-h-10 items-center justify-center gap-2 border border-border-dark px-3 py-2 text-[9px] font-bold uppercase tracking-[0.1em] text-muted-light transition-colors hover:bg-charcoal hover:text-ivory; }
+  .status-muted { @apply inline-flex border border-border-light px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark; }
+  .ledger-link { @apply inline-flex min-h-10 items-center justify-center gap-2 border border-border-dark px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-ivory transition-colors hover:bg-charcoal; }
+  .ledger-status { @apply inline-flex items-center gap-1.5 border border-border-dark px-2 py-1 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-light; }
+  .ledger-status-complete { @apply bg-ivory text-obsidian; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  @page { margin: 10mm; }
+  html, body, #root { width: 100%; height: auto !important; overflow: visible !important; background: #F3F0EA !important; color: #252422 !important; }
+  .portfolio-app { display: flex !important; min-height: auto !important; background: #F3F0EA !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .portfolio-mobile-header, .portfolio-mobile-overlay { display: none !important; }
+  .portfolio-sidebar { position: static !important; display: flex !important; width: 64mm !important; min-height: 100vh !important; flex-shrink: 0 !important; transform: none !important; }
+  .portfolio-main { margin-left: 0 !important; min-width: 0 !important; }
+  .portfolio-topbar { position: static !important; display: flex !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; transform: none !important; box-shadow: none !important; filter: none !important; backdrop-filter: none !important; }
+  video { display: none !important; }
+  article, tr, section { break-inside: avoid; page-break-inside: avoid; }
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fcf9f3; /* Surface color from config */
+            color: #1c1c18; /* On-surface */
+        }
+        .sidebar-active-indicator {
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover .index-number {
+            transform: translateY(-4px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e6e1e2",
+                    "surface-container-highest": "#e5e2dc",
+                    "border-light": "rgba(37,36,34,0.16)",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary-fixed-variant": "#484647",
+                    "on-error": "#ffffff",
+                    "border-dark": "rgba(243,240,234,0.16)",
+                    "secondary": "#665d4f",
+                    "on-secondary-container": "#6c6354",
+                    "primary-fixed-dim": "#c9c6c2",
+                    "on-surface-variant": "#494740",
+                    "tertiary-container": "#252425",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#4e4638",
+                    "surface-bright": "#fcf9f3",
+                    "inverse-on-surface": "#f3f0ea",
+                    "surface-dim": "#dcdad4",
+                    "tertiary-fixed-dim": "#c9c5c6",
+                    "primary": "#0f0f0d",
+                    "secondary-fixed": "#ede1ce",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-soft": "#CFC4B4",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fcf9f3",
+                    "primary-container": "#252422",
+                    "surface-container-low": "#f6f3ed",
+                    "on-primary-fixed-variant": "#484644",
+                    "text-muted-dark": "#B8B2A8",
+                    "on-primary-fixed": "#1c1b1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#100f10",
+                    "inverse-surface": "#31312d",
+                    "secondary-fixed-dim": "#d1c5b3",
+                    "on-tertiary-container": "#8d8b8c",
+                    "primary-fixed": "#e6e2de",
+                    "on-secondary-fixed": "#211b0f",
+                    "on-background": "#1c1c18",
+                    "on-primary-container": "#8e8b88",
+                    "surface-variant": "#e5e2dc",
+                    "secondary-container": "#ede1ce",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe8e2",
+                    "on-surface": "#1c1c18",
+                    "outline": "#7a776f",
+                    "text-muted": "#6F6A62",
+                    "on-tertiary-fixed": "#1c1b1c",
+                    "dark-surface": "#141412",
+                    "outline-variant": "#cac6bd",
+                    "surface": "#fcf9f3",
+                    "surface-tint": "#605e5b",
+                    "deep-black": "#080807",
+                    "inverse-primary": "#c9c6c2",
+                    "error-container": "#ffdad6",
+                    "paper-warm": "#EDE8DF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "8rem",
+                    "sidebar-width": "300px",
+                    "margin-desktop": "4rem",
+                    "margin-mobile": "1.5rem",
+                    "rule-weight": "1px",
+                    "gutter": "2rem"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"],
+                    "display-xl": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-screen w-sidebar-width bg-deep-black flex flex-col py-8 px-6 border-r border-border-dark hidden md:flex z-50">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md font-bold text-surface-container-lowest tracking-tight">Portfolio</h1>
+<p class="font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest mt-1">Academic Year 2025–26</p>
+</div>
+<div class="flex flex-col space-y-6 flex-grow">
+<!-- Active Tab -->
+<a class="flex items-center space-x-4 text-surface-container-lowest font-bold border-l-2 border-surface-container-lowest pl-4 py-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">01 Overview</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center space-x-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 py-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment">assignment</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">02 Assignments</span>
+</a>
+<a class="flex items-center space-x-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 py-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">03 Evidence</span>
+</a>
+<a class="flex items-center space-x-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 py-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assessment">assessment</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">04 Rubric</span>
+</a>
+<a class="flex items-center space-x-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 py-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="psychology">psychology</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase">05 Reflection</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 bg-tertiary-container text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest hover:bg-opacity-80 transition-all">
+                Contact Faculty
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-sidebar-width min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20 bg-surface border-b border-border-light sticky top-0 z-40">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tighter">OVERVIEW / TỔNG QUAN</h2>
+</div>
+<div class="hidden md:block">
+<span class="font-label-caps text-label-caps text-text-muted tracking-widest uppercase">Academic Year 2025–26</span>
+</div>
+<!-- Mobile Menu Toggle (simplified for this task) -->
+<button class="md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<div class="px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<section class="relative mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-9">
+<h1 class="font-display-xl text-display-xl text-primary-container leading-none mb-8">
+                            Transnational Cultural &amp; <br/> Media Studies Portfolio
+                        </h1>
+<!-- Decorative Rules -->
+<div class="space-y-4 mb-12">
+<div class="w-full h-rule-weight bg-border-light opacity-60"></div>
+<div class="w-2/3 h-rule-weight bg-border-light opacity-40"></div>
+<div class="w-1/3 h-rule-weight bg-border-light opacity-20"></div>
+</div>
+<!-- Statement Banner -->
+<div class="bg-primary-container text-inverse-on-surface p-10 md:p-14 inline-block max-w-2xl transform translate-y-4">
+<p class="font-headline-md text-headline-md leading-relaxed">
+                                Academic portfolio for strategy, media, evidence, and reflection.
+                            </p>
+</div>
+</div>
+<!-- Identity Card (Floating/Right-aligned) -->
+<div class="lg:col-span-3 flex flex-col justify-end pt-12 lg:pt-0">
+<div class="bg-paper-warm p-8 border border-border-light shadow-sm sticky top-32">
+<div class="mb-8">
+<img alt="Profile image of Bùi Yến Ngọc" class="w-24 h-24 object-cover mb-6 border border-border-light" data-alt="A professional and artistic portrait of a young Vietnamese academic in a minimalist studio setting. The lighting is soft and natural, emphasizing a high-end, editorial feel consistent with a luxury brand. The subject wears a charcoal-colored structured blazer against a warm beige textured wall background. The overall aesthetic is clean, intellectual, and sophisticated, aligning with the Quiet Luxury theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBwVrsl7D4WEOk3lBVTZb8mnRjC2-QRcw_WMOp3nIm1lFbyaSrdWCRM8keAzjSErixpG6ryyymeMkOgEJg9ofhcIhzE-7BXjYvcC8H18yEB5sK9CZm1cC3H4JNReKCh3suelFoZer2qBUbpZG12DEHjp5l7Z2FKJoVTVFPLX0kbCcJoJPjC_wGJhqE45S48BX1HiAKFxxca1YpRe4jCmfJvHiRUNJ67HXLvCGGkUhVb_3L2oEHgj6E5kDODVknVB9jMf4fnFzpBfY"/>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-1">Portfolio Owner</p>
+<h3 class="font-headline-md text-headline-md text-primary">Bùi Yến Ngọc</h3>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest">Major</p>
+<p class="font-body-md text-body-md font-bold">Văn hóa và Truyền thông Xuyên quốc gia</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest">Institution</p>
+<p class="font-body-md text-body-md font-bold">ULIS - VNU</p>
+<p class="font-body-md text-body-md text-text-muted text-sm leading-snug mt-1">Trường Đại học Ngoại Ngữ - Đại học Quốc gia Hà Nội</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Module Grid (Bento Style) -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-md">
+<h2 class="font-headline-xl text-headline-xl text-primary-container leading-tight">Module Explorer</h2>
+<div class="w-16 h-1 bg-primary mt-4"></div>
+</div>
+<p class="hidden md:block font-body-md text-body-md text-text-muted max-w-xs">
+                        Navigate through the academic journey and research documentation.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 01 -->
+<div class="bento-card group bg-surface-container-low p-8 border border-border-light hover:bg-paper-warm transition-all duration-500 cursor-pointer flex flex-col h-80">
+<div class="index-number font-display-lg text-display-lg text-outline-variant opacity-30 mb-auto group-hover:opacity-100 transition-opacity">01</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:translate-x-2 transition-transform">Coursework</h4>
+<p class="font-body-md text-body-md text-text-muted leading-snug">Fundamental theories and strategy assignments.</p>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="bento-card group bg-surface-container-low p-8 border border-border-light hover:bg-paper-warm transition-all duration-500 cursor-pointer flex flex-col h-80">
+<div class="index-number font-display-lg text-display-lg text-outline-variant opacity-30 mb-auto group-hover:opacity-100 transition-opacity">02</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:translate-x-2 transition-transform">Evidence</h4>
+<p class="font-body-md text-body-md text-text-muted leading-snug">Media production and campaign execution artifacts.</p>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="bento-card group bg-surface-container-low p-8 border border-border-light hover:bg-paper-warm transition-all duration-500 cursor-pointer flex flex-col h-80 lg:mt-8">
+<div class="index-number font-display-lg text-display-lg text-outline-variant opacity-30 mb-auto group-hover:opacity-100 transition-opacity">03</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:translate-x-2 transition-transform">Rubric</h4>
+<p class="font-body-md text-body-md text-text-muted leading-snug">Evaluation criteria and grading standard benchmarks.</p>
+</div>
+</div>
+<!-- Card 04 -->
+<div class="bento-card group bg-surface-container-low p-8 border border-border-light hover:bg-paper-warm transition-all duration-500 cursor-pointer flex flex-col h-80 lg:mt-8">
+<div class="index-number font-display-lg text-display-lg text-outline-variant opacity-30 mb-auto group-hover:opacity-100 transition-opacity">04</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:translate-x-2 transition-transform">Reflection</h4>
+<p class="font-body-md text-body-md text-text-muted leading-snug">Personal insights and strategic growth analysis.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Visual Spacer -->
+<section class="h-96 relative overflow-hidden mb-section-gap">
+<div class="absolute inset-0 bg-primary-container flex items-center justify-center">
+<!-- Subtle pattern or imagery would go here -->
+<div class="absolute inset-0 opacity-20 mix-blend-overlay">
+
+</div>
+<div class="z-10 text-center px-6">
+<p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-[0.4em] mb-4">Strategic Framework</p>
+<h3 class="font-headline-xl text-headline-xl text-surface-container-lowest max-w-3xl mx-auto leading-tight italic">"Good design is obvious. Great design is transparent."</h3>
+</div>
+</div>
+</section>
+<!-- Footer-style Secondary Nav -->
+<footer class="pt-12 border-t border-border-light grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+<div>
+<h5 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-6">Contact &amp; Inquiries</h5>
+<div class="space-y-2">
+<p class="font-body-lg text-body-lg">dt.son@hsb.vnu.edu.vn</p>
+<p class="font-body-lg text-body-lg">+84 (0) 900 000 000</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end">
+<h5 class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest mb-6">Socials</h5>
+<div class="flex space-x-8">
+<a class="font-body-md text-body-md hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md hover:text-primary transition-colors" href="#">Behance</a>
+<a class="font-body-md text-body-md hover:text-primary transition-colors" href="#">Medium</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Floating Action Element (Optional - for high-end feel) -->
+<div class="fixed bottom-12 right-12 z-50">
+<button class="bg-primary-container text-surface-container-lowest w-16 h-16 flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="expand_less">expand_less</span>
+</button>
+</div>
+<script>
+        // Micro-interaction for the cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

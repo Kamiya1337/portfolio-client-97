@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e6e1e2",
+                        "surface-container-highest": "#e5e2dc",
+                        "border-light": "rgba(37,36,34,0.16)",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary-fixed-variant": "#484647",
+                        "on-error": "#ffffff",
+                        "border-dark": "rgba(243,240,234,0.16)",
+                        "secondary": "#665d4f",
+                        "on-secondary-container": "#6c6354",
+                        "primary-fixed-dim": "#c9c6c2",
+                        "on-surface-variant": "#494740",
+                        "tertiary-container": "#252425",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#4e4638",
+                        "surface-bright": "#fcf9f3",
+                        "inverse-on-surface": "#f3f0ea",
+                        "surface-dim": "#dcdad4",
+                        "tertiary-fixed-dim": "#c9c5c6",
+                        "primary": "#0f0f0d",
+                        "secondary-fixed": "#ede1ce",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-soft": "#CFC4B4",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fcf9f3",
+                        "primary-container": "#252422",
+                        "surface-container-low": "#f6f3ed",
+                        "on-primary-fixed-variant": "#484644",
+                        "text-muted-dark": "#B8B2A8",
+                        "on-primary-fixed": "#1c1b1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#100f10",
+                        "inverse-surface": "#31312d",
+                        "secondary-fixed-dim": "#d1c5b3",
+                        "on-tertiary-container": "#8d8b8c",
+                        "primary-fixed": "#e6e2de",
+                        "on-secondary-fixed": "#211b0f",
+                        "on-background": "#1c1c18",
+                        "on-primary-container": "#8e8b88",
+                        "surface-variant": "#e5e2dc",
+                        "secondary-container": "#ede1ce",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ebe8e2",
+                        "on-surface": "#1c1c18",
+                        "outline": "#7a776f",
+                        "text-muted": "#6F6A62",
+                        "on-tertiary-fixed": "#1c1b1c",
+                        "dark-surface": "#141412",
+                        "outline-variant": "#cac6bd",
+                        "surface": "#fcf9f3",
+                        "surface-tint": "#605e5b",
+                        "deep-black": "#080807",
+                        "inverse-primary": "#c9c6c2",
+                        "error-container": "#ffdad6",
+                        "paper-warm": "#EDE8DF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "8rem",
+                        "sidebar-width": "300px",
+                        "margin-desktop": "4rem",
+                        "margin-mobile": "1.5rem",
+                        "rule-weight": "1px",
+                        "gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "display-xl": ["Be Vietnam Pro"],
+                        "headline-xl": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f3;
+            color: #1c1c18;
+            -webkit-font-smoothing: antialiased;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #080807;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #494740;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Fixed Side Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-deep-black dark:bg-deep-black border-r border-border-dark flex flex-col py-8 px-6 z-50">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md font-bold text-surface-container-lowest uppercase tracking-tighter">Portfolio</h1>
+<p class="font-label-caps text-label-caps tracking-widest text-text-muted-dark mt-1">Academic Year 2025–26</p>
+</div>
+<nav class="flex-1 space-y-4">
+<a class="flex items-center gap-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 font-label-caps text-label-caps tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>01 Overview</span>
+</a>
+<a class="flex items-center gap-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 font-label-caps text-label-caps tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>02 Assignments</span>
+</a>
+<a class="flex items-center gap-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 font-label-caps text-label-caps tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>03 Evidence</span>
+</a>
+<a class="flex items-center gap-4 text-surface-container-lowest font-bold border-l-2 border-surface-container-lowest pl-4 font-label-caps text-label-caps tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span>04 Rubric</span>
+</a>
+<a class="flex items-center gap-4 text-text-muted-dark hover:text-surface-container-lowest transition-colors duration-200 pl-4 font-label-caps text-label-caps tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>05 Reflection</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-border-dark">
+<button class="w-full py-4 px-6 bg-surface-container-lowest text-deep-black font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary-fixed transition-colors">
+                Contact Faculty
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-sidebar-width min-h-screen">
+<!-- Header -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-20 bg-surface border-b border-border-light">
+<h2 class="font-headline-md text-headline-md font-bold uppercase tracking-tighter text-primary">04 RUBRIC / TIÊU CHÍ</h2>
+<div class="font-label-caps text-label-caps tracking-widest text-text-muted uppercase">Academic Year 2025–26</div>
+</header>
+<!-- Section: Rubric Ledger -->
+<section class="bg-deep-black text-surface-container-lowest py-20 px-margin-desktop">
+<div class="max-w-6xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest block mb-4">Quality Standards</span>
+<h3 class="font-headline-xl text-headline-xl tracking-tighter">Assessment Matrix</h3>
+</div>
+<div class="text-right">
+<div class="bg-tertiary-container p-6 border border-border-dark">
+<span class="block font-label-caps text-label-caps text-text-muted-dark mb-1">CURRENT STATUS</span>
+<span class="text-headline-md font-bold text-surface-bright uppercase">Exceeding Expectations</span>
+</div>
+</div>
+</div>
+<!-- Ledger Table -->
+<div class="border-t border-border-dark">
+<div class="grid grid-cols-12 py-6 border-b border-border-dark gap-8 items-center bg-transparent hover:bg-tertiary-container transition-all group">
+<div class="col-span-3 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Criterion</div>
+<div class="col-span-2 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Below Std</div>
+<div class="col-span-2 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Proficient</div>
+<div class="col-span-2 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest">Mastery</div>
+<div class="col-span-3 font-label-caps text-label-caps text-text-muted-dark uppercase tracking-widest text-right">Self-Score</div>
+</div>
+<!-- Row 1 -->
+<div class="grid grid-cols-12 py-10 border-b border-border-dark gap-8 items-start group">
+<div class="col-span-3">
+<h4 class="font-headline-md text-headline-md mb-2">Technical Depth</h4>
+<p class="text-text-muted-dark font-body-md opacity-60">Complexity and rigor of methodology.</p>
+</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Surface-level analysis, minimal data support.</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Accurate application of standard tools.</div>
+<div class="col-span-2 text-surface-bright text-sm border-l border-surface-bright pl-4">Novel integration of multiple complex frameworks.</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-4 py-2 bg-surface-container-lowest text-deep-black font-bold">10.0 / 10.0</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 py-10 border-b border-border-dark gap-8 items-start group">
+<div class="col-span-3">
+<h4 class="font-headline-md text-headline-md mb-2">Narrative Logic</h4>
+<p class="text-text-muted-dark font-body-md opacity-60">Clarity of argument flow and structure.</p>
+</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Disjointed segments with unclear links.</div>
+<div class="col-span-2 text-surface-bright text-sm border-l border-surface-bright pl-4">Logical progression through all major points.</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Compelling, rhythmic storytelling beyond logic.</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-4 py-2 bg-tertiary-container border border-border-dark text-text-muted-dark font-bold">8.5 / 10.0</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 py-10 border-b border-border-dark gap-8 items-start group">
+<div class="col-span-3">
+<h4 class="font-headline-md text-headline-md mb-2">Evidence Synthesys</h4>
+<p class="text-text-muted-dark font-body-md opacity-60">Triangulation of disparate sources.</p>
+</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Reliance on singular primary sources.</div>
+<div class="col-span-2 text-text-muted-dark text-sm opacity-40">Basic comparison between source points.</div>
+<div class="col-span-2 text-surface-bright text-sm border-l border-surface-bright pl-4">Cross-disciplinary synthesis creating new insights.</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-4 py-2 bg-surface-container-lowest text-deep-black font-bold">9.5 / 10.0</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Readiness Panel -->
+<section class="py-24 px-margin-desktop bg-surface-container-low border-b border-border-light">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest block mb-4">Competency Radar</span>
+<h2 class="font-headline-xl text-headline-xl tracking-tighter mb-8">Professional Readiness</h2>
+<p class="text-body-lg text-on-surface-variant max-w-xl">
+                        Based on the assessment rubric, the portfolio demonstrates a high level of preparedness for graduate-level research. The synthesis of evidence aligns with Tier 1 institutional requirements for the 2025–26 cycle.
+                    </p>
+</div>
+<div class="w-full md:w-80 bg-deep-black text-surface-container-lowest p-10 relative overflow-hidden">
+<div class="relative z-10">
+<div class="text-display-lg font-black mb-2">93%</div>
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-text-muted-dark">Aggregate Score</p>
+<div class="mt-8 pt-8 border-t border-border-dark flex gap-4 items-center">
+<span class="material-symbols-outlined text-surface-soft" data-icon="verified">verified</span>
+<span class="text-sm uppercase tracking-tighter">Verified by Faculty</span>
+</div>
+</div>
+<!-- Subtle pattern background for the card -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Reflection -->
+<section class="py-section-gap px-margin-desktop bg-paper-warm" id="reflection">
+<div class="max-w-4xl mx-auto">
+<div class="mb-20 text-center">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-widest block mb-6">05 REFLECTION</span>
+<h2 class="font-display-lg text-display-lg text-primary tracking-tighter">Tổng kết &amp; Suy ngẫm</h2>
+</div>
+<div class="space-y-24">
+<!-- Reflection Block 1 -->
+<div class="relative pl-12 border-l border-primary">
+<span class="absolute -left-3 top-0 bg-paper-warm py-2 text-headline-md font-black">01</span>
+<div class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">Hành trình khám phá tri thức</h3>
+<div class="font-body-lg text-primary-container leading-relaxed text-justify italic">
+                                Nhìn lại quá trình thực hiện danh mục hồ sơ này, tôi nhận thấy sự thay đổi rõ rệt trong tư duy tiếp cận vấn đề. Không còn là những mảnh ghép rời rạc, mỗi bài luận và minh chứng đều là một bước tiến trong việc xây dựng hệ thống kiến thức toàn diện.
+                            </div>
+<div class="font-body-md text-on-surface-variant leading-loose">
+                                Thách thức lớn nhất không nằm ở việc thu thập dữ liệu, mà là ở khả năng chắt lọc tinh hoa từ khối lượng thông tin khổng lồ. Việc áp dụng các khung lý thuyết hiện đại vào thực tiễn địa phương đã giúp tôi nhận diện được những khoảng trống trong nghiên cứu hiện tại, từ đó đề xuất những hướng đi mang tính đột phá cho giai đoạn tiếp theo.
+                            </div>
+</div>
+</div>
+<!-- Middle Divider -->
+<hr class="border-t border-border-light w-1/3 mx-auto"/>
+<!-- Reflection Block 2 -->
+<div class="relative pl-12 border-l border-primary">
+<span class="absolute -left-3 top-0 bg-paper-warm py-2 text-headline-md font-black">02</span>
+<div class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">Tầm nhìn và Cam kết</h3>
+<div class="font-body-lg text-primary-container leading-relaxed text-justify italic">
+                                Học tập không phải là đích đến, mà là một hành trình tự hoàn thiện không ngừng nghỉ. Những tiêu chí khắt khe trong Rubric đã trở thành kim chỉ nam giúp tôi duy trì tính kỷ luật và tiêu chuẩn cao nhất trong công việc.
+                            </div>
+<div class="font-body-md text-on-surface-variant leading-loose">
+                                Trong tương lai, tôi cam kết sẽ tiếp tục mở rộng mạng lưới nghiên cứu và ứng dụng những phương pháp luận mới vào Portfolio. Sự tương tác với giảng viên và các đồng nghiệp trong năm học 2025–26 sẽ là tiền đề quan trọng để tôi tinh chỉnh các kỹ năng chuyên môn, hướng tới sự xuất sắc trong học thuật và sự chính trực trong nghề nghiệp.
+                            </div>
+</div>
+</div>
+</div>
+<div class="mt-32 flex justify-between items-center py-10 border-t border-primary">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-deep-black flex items-center justify-center text-surface-container-lowest">
+<span class="material-symbols-outlined" data-icon="signature">edit_note</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps uppercase text-text-muted">Signature</p>
+<p class="font-headline-md text-headline-md font-bold tracking-tight">Trần Anh Tuấn</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps uppercase text-text-muted">Date of Review</p>
+<p class="font-headline-md text-headline-md font-bold tracking-tight">Oct 12, 2025</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Closure -->
+<footer class="py-20 px-margin-desktop bg-deep-black text-text-muted-dark border-t border-border-dark flex justify-between items-center">
+<div class="font-label-caps text-label-caps uppercase tracking-[0.2em]">End of Portfolio Section 04-05</div>
+<div class="flex gap-8 font-label-caps text-label-caps uppercase tracking-widest">
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Privacy</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Institutional Rights</a>
+<a class="hover:text-surface-container-lowest transition-colors" href="#">Digital Archive</a>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interactions for the rubric rows
+        document.querySelectorAll('.group').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(8px)';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0px)';
+            });
+        });
+
+        // Simple Fade-in effect for the reflection blocks
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.relative.pl-12').forEach(block => {
+            block.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(block);
+        });
+    </script>
+</body></html>
