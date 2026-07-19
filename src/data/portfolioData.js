@@ -66,7 +66,7 @@ export const portfolioData = {
       target: "Trình bày minh chứng về việc sử dụng công cụ quản lý dự án nhóm và cách phối hợp.",
       process: "Thiết lập không gian làm việc chung. Phân chia task rõ ràng, đặt deadline và theo dõi tiến độ qua bảng Kanban. Tổ chức họp nhóm qua Google Meet và ghi biên bản họp trực tuyến.",
       evidenceImg: "/images/Bài 4.png",
-      report: "/docs/Bài 4.pdf",
+      report: "/docs/bài 4.pdf",
       status: "Đang hoàn thiện"
     },
     {
